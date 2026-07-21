@@ -1,6 +1,6 @@
 # Spring REST & Spring Core (XML)
 
-Hands-on exercises **1–6** for Spring Boot **3.3.x**, Spring Web, Spring Core XML, and SLF4J (Java **21**).
+Hands-on exercises **1–13** for Spring Boot **3.3.x**, Spring Web, Spring Core XML, REST, and SLF4J (Java **21**).
 
 | Hands-On | Folder | Focus |
 |----------|--------|--------|
@@ -10,6 +10,13 @@ Hands-on exercises **1–6** for Spring Boot **3.3.x**, Spring Web, Spring Core 
 | 4 | [Hands-On-04-Country-Bean](Hands-On-04-Country-Bean/) | XML bean, setter injection |
 | 5 | [Hands-On-05-Bean-Scopes](Hands-On-05-Bean-Scopes/) | Singleton vs prototype |
 | 6 | [Hands-On-06-Country-List](Hands-On-06-Country-List/) | `<list>` / `<ref>` wiring |
+| 7 | [Hands-On-07-Hello-REST-Service](Hands-On-07-Hello-REST-Service/) | `GET /hello` plain text REST |
+| 8 | [Hands-On-08-Country-REST-Service](Hands-On-08-Country-REST-Service/) | XML `Country` bean as JSON |
+| 9 | [Hands-On-09-Get-All-Countries](Hands-On-09-Get-All-Countries/) | `GET /countries` list JSON |
+| 10 | [Hands-On-10-Get-Country-By-Code](Hands-On-10-Get-Country-By-Code/) | Path lookup, 404 via `ResponseEntity` |
+| 11 | [Hands-On-11-Country-Exception](Hands-On-11-Country-Exception/) | `CountryNotFoundException` + `@ResponseStatus` |
+| 12 | [Hands-On-12-MockMvc-Success-Test](Hands-On-12-MockMvc-Success-Test/) | MockMvc happy-path JSON tests |
+| 13 | [Hands-On-13-MockMvc-Exception-Test](Hands-On-13-MockMvc-Exception-Test/) | MockMvc 404 / error message tests |
 
 Package base: `com.cognizant.springlearn`
 
