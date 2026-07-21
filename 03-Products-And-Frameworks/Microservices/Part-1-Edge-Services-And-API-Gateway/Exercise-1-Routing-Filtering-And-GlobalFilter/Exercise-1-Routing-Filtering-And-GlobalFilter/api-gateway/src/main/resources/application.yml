@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+      routes:
+        - id: catalog-route
+          uri: lb://catalog-service
+          predicates:
+            - Path=/api/catalog/**
+          filters:
+            - StripPrefix=1
+            - AddRequestHeader=X-Exercise, routing-and-filtering
+            - name: RequestHeader
+              args:
+                headerName: X-Gateway-Source
+                headerValue: exercise-1-api-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

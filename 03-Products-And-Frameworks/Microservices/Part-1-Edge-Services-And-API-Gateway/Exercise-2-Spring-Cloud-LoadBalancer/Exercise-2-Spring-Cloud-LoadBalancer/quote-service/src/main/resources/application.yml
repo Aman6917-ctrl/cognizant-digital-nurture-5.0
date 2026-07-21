@@ -1,0 +1,13 @@
+server:
+  port: 8091
+spring:
+  application:
+    name: quote-service
+quote:
+  instance-id: quote-a
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8762/eureka/
+  instance:
+    instance-id: ${quote.instance-id}

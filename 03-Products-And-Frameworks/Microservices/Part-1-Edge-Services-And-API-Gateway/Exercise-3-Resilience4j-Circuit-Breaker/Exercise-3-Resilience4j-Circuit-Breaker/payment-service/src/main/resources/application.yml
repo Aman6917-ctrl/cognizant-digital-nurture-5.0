@@ -1,0 +1,21 @@
+server:
+  port: 8093
+spring:
+  application:
+    name: payment-service
+payment:
+  fail: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8763/eureka/
+resilience4j:
+  timelimiter:
+    instances:
+      paymentService:
+        timeout-duration: 2s
+  circuitbreaker:
+    instances:
+      paymentService:
+        sliding-window-size: 5
+        failure-rate-threshold: 50

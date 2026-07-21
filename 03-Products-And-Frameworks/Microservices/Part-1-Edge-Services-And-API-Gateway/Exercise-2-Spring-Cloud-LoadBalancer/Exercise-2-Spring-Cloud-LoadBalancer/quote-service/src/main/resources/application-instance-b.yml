@@ -1,0 +1,4 @@
+server:
+  port: 8092
+quote:
+  instance-id: quote-b

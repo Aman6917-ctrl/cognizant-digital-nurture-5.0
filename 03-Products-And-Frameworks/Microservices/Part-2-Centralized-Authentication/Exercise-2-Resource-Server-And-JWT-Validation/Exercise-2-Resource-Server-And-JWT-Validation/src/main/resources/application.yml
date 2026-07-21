@@ -1,0 +1,8 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: resource-server
+security:
+  jwt:
+    secret: change-me-change-me-change-me-1234567890

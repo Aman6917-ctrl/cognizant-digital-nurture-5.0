@@ -1,0 +1,18 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: quote-lb-route
+          uri: lb://quote-service
+          predicates:
+            - Path=/api/quotes/**
+          filters:
+            - StripPrefix=1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8762/eureka/

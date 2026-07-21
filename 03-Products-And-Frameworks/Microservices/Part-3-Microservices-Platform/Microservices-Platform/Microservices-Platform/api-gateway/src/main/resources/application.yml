@@ -1,0 +1,123 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: api-gateway
+  config:
+    import: optional:configserver:http://localhost:8888
+  cloud:
+    gateway:
+      routes:
+        - id: account-route
+          uri: lb://account-service
+          predicates:
+            - Path=/platform/account/**
+          filters:
+            - StripPrefix=2
+            - name: CircuitBreaker
+              args:
+                name: accountCircuitBreaker
+                fallbackUri: forward:/fallback/orders
+        - id: loan-route
+          uri: lb://loan-service
+          predicates:
+            - Path=/platform/loan/**
+          filters:
+            - StripPrefix=2
+            - name: CircuitBreaker
+              args:
+                name: loanCircuitBreaker
+                fallbackUri: forward:/fallback/orders
+        - id: user-route
+          uri: lb://user-service
+          predicates:
+            - Path=/platform/user/**
+          filters:
+            - StripPrefix=2
+            - name: CircuitBreaker
+              args:
+                name: userCircuitBreaker
+                fallbackUri: forward:/fallback/orders
+        - id: order-route
+          uri: lb://order-service
+          predicates:
+            - Path=/platform/order/**
+          filters:
+            - StripPrefix=2
+            - name: CircuitBreaker
+              args:
+                name: orderCircuitBreaker
+                fallbackUri: forward:/fallback/orders
+        - id: product-route
+          uri: lb://product-service
+          predicates:
+            - Path=/platform/product/**
+          filters:
+            - StripPrefix=2
+            - name: CircuitBreaker
+              args:
+                name: productCircuitBreaker
+                fallbackUri: forward:/fallback/orders
+        - id: inventory-route
+          uri: lb://inventory-service
+          predicates:
+            - Path=/platform/inventory/**
+          filters:
+            - StripPrefix=2
+            - name: CircuitBreaker
+              args:
+                name: inventoryCircuitBreaker
+                fallbackUri: forward:/fallback/orders
+        - id: payment-route
+          uri: lb://payment-service
+          predicates:
+            - Path=/platform/payment/**
+          filters:
+            - StripPrefix=2
+            - name: CircuitBreaker
+              args:
+                name: paymentCircuitBreaker
+                fallbackUri: forward:/fallback/orders
+        - id: customer-route
+          uri: lb://customer-service
+          predicates:
+            - Path=/platform/customer/**
+          filters:
+            - StripPrefix=2
+            - name: CircuitBreaker
+              args:
+                name: customerCircuitBreaker
+                fallbackUri: forward:/fallback/orders
+        - id: billing-route
+          uri: lb://billing-service
+          predicates:
+            - Path=/platform/billing/**
+          filters:
+            - StripPrefix=2
+            - name: CircuitBreaker
+              args:
+                name: billingCircuitBreaker
+                fallbackUri: forward:/fallback/orders
+        - id: greet-route
+          uri: lb://greet-service
+          predicates:
+            - Path=/platform/greet/**
+          filters:
+            - StripPrefix=2
+            - name: CircuitBreaker
+              args:
+                name: greetCircuitBreaker
+                fallbackUri: forward:/fallback/orders
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8765/eureka/
+security:
+  jwt:
+    secret: change-me-change-me-change-me-1234567890
+resilience4j:
+  circuitbreaker:
+    instances:
+      orderCircuitBreaker:
+        sliding-window-size: 5
+        failure-rate-threshold: 50
