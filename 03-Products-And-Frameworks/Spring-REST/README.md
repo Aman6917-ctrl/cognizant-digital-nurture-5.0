@@ -1,6 +1,6 @@
 # Spring REST & Spring Core (XML)
 
-Hands-on exercises **1–15** for Spring Boot **3.3.x**, Spring Web, Spring Core XML, REST, Employee/Department services, and SLF4J (Java **21**).
+Hands-on exercises **1–20** for Spring Boot **3.3.x**, Spring Web, Spring Core XML, REST, validation, exception handling, Employee/Department services, and SLF4J (Java **21**).
 
 | Hands-On | Folder | Focus |
 |----------|--------|--------|
@@ -19,6 +19,11 @@ Hands-on exercises **1–15** for Spring Boot **3.3.x**, Spring Web, Spring Core
 | 13 | [Hands-On-13-MockMvc-Exception-Test](Hands-On-13-MockMvc-Exception-Test/) | MockMvc 404 / error message tests |
 | 14 | [Hands-On-14-Employee-REST-Service](Hands-On-14-Employee-REST-Service/) | XML `employee.xml`, `GET /employees`, DAO/Service/Controller |
 | 15 | [Hands-On-15-Department-REST-Service](Hands-On-15-Department-REST-Service/) | `GET /departments`, shared XML catalog |
+| 16 | [Hands-On-16-Country-POST](Hands-On-16-Country-POST/) | `POST /countries`, Jackson `@RequestBody` |
+| 17 | [Hands-On-17-Country-Validation](Hands-On-17-Country-Validation/) | `@Valid`, Bean Validation, HTTP 400 |
+| 18 | [Hands-On-18-Global-Exception-Handler](Hands-On-18-Global-Exception-Handler/) | `@ControllerAdvice`, structured error JSON |
+| 19 | [Hands-On-19-Employee-PUT-Service](Hands-On-19-Employee-PUT-Service/) | `PUT /employees`, nested validation, `@JsonFormat` |
+| 20 | [Hands-On-20-Employee-DELETE-Service](Hands-On-20-Employee-DELETE-Service/) | `DELETE /employees/{id}`, 404 when missing |
 
 Package base: `com.cognizant.springlearn`
 
