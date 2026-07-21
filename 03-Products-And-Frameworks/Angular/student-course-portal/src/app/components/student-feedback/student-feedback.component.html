@@ -1,0 +1,42 @@
+<section class="feedback">
+  <h2>Student Feedback (Template-Driven Form)</h2>
+  <p>Hands-On 4: template forms, built-in validation, and submit handling.</p>
+
+  <form #feedbackForm="ngForm" (ngSubmit)="onSubmit(feedbackForm)" novalidate>
+    <label>
+      Full Name
+      <input name="fullName" ngModel required minlength="3" #fullName="ngModel" />
+    </label>
+    <p class="error" *ngIf="fullName.invalid && fullName.touched">Name is required (min 3 characters).</p>
+
+    <label>
+      Email
+      <input
+        name="email"
+        type="email"
+        ngModel
+        required
+        email
+        #email="ngModel"
+        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+      />
+    </label>
+    <p class="error" *ngIf="email.invalid && email.touched">Enter a valid email address.</p>
+
+    <label>
+      Rating (1-5)
+      <input name="rating" type="number" ngModel required min="1" max="5" #rating="ngModel" />
+    </label>
+    <p class="error" *ngIf="rating.invalid && rating.touched">Rating must be between 1 and 5.</p>
+
+    <label>
+      Comments
+      <textarea name="comments" ngModel required minlength="10" #comments="ngModel"></textarea>
+    </label>
+    <p class="error" *ngIf="comments.invalid && comments.touched">Comments must be at least 10 characters.</p>
+
+    <button type="submit" [disabled]="feedbackForm.invalid">Submit Feedback</button>
+  </form>
+
+  <pre *ngIf="submittedPayload as payload">{{ payload | json }}</pre>
+</section>

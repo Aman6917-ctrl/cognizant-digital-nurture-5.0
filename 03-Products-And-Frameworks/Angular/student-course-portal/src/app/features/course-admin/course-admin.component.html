@@ -1,0 +1,60 @@
+<section class="admin">
+  <h2>Course Admin (HTTP CRUD + NgRx)</h2>
+  <p>Hands-On 8–9: JSON Server API, interceptors, store, effects, and selectors.</p>
+
+  <p *ngIf="loading$ | async" class="hint">Saving/loading courses…</p>
+  <p *ngIf="error$ | async as error" class="error">{{ error }}</p>
+
+  <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+    <label>
+      Title
+      <input formControlName="title" />
+    </label>
+    <label>
+      Credits
+      <input type="number" formControlName="credits" />
+    </label>
+    <label>
+      Level
+      <select formControlName="level">
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+      </select>
+    </label>
+    <label class="checkbox">
+      <input type="checkbox" formControlName="isActive" />
+      Active
+    </label>
+    <div class="actions">
+      <button type="submit">{{ editingCourseId === null ? 'Create' : 'Update' }}</button>
+      <button type="button" (click)="resetForm()">Reset</button>
+    </div>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Credits</th>
+        <th>Level</th>
+        <th>Active</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of courses$ | async">
+        <td>{{ course.id }}</td>
+        <td>{{ course.title }}</td>
+        <td>{{ course.credits }}</td>
+        <td>{{ course.level }}</td>
+        <td>{{ course.isActive ? 'Yes' : 'No' }}</td>
+        <td>
+          <button type="button" (click)="startEdit(course)">Edit</button>
+          <button type="button" (click)="removeCourse(course.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

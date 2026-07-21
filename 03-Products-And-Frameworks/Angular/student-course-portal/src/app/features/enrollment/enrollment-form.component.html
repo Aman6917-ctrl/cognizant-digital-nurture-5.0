@@ -1,0 +1,49 @@
+<section class="enrollment">
+  <h2>Enrollment (Reactive Form)</h2>
+  <p>Hands-On 5–6: reactive forms, custom/async validators, FormArray, and services.</p>
+
+  <form [formGroup]="enrollmentForm" (ngSubmit)="onSubmit()">
+    <label>
+      Student Name
+      <input formControlName="studentName" />
+    </label>
+    <p class="error" *ngIf="showError('studentName')">Enter a valid name (no forbidden words).</p>
+
+    <label>
+      Email
+      <input formControlName="email" />
+    </label>
+    <p class="error" *ngIf="enrollmentForm.get('email')?.hasError('emailTaken')">Email is already enrolled.</p>
+    <p class="error" *ngIf="showError('email')">Enter a valid email.</p>
+    <p class="hint" *ngIf="enrollmentForm.get('email')?.pending">Checking email availability…</p>
+
+    <label>
+      Program
+      <input formControlName="program" />
+    </label>
+
+    <fieldset formArrayName="coursePreferences">
+      <legend>Course Preferences (FormArray)</legend>
+      <div class="row" *ngFor="let group of coursePreferences.controls; let i = index" [formGroupName]="i">
+        <label>
+          Course
+          <select formControlName="courseId">
+            <option [ngValue]="null">Select course</option>
+            <option *ngFor="let course of availableCourses" [ngValue]="course.id">{{ course.title }}</option>
+          </select>
+        </label>
+        <label>
+          Expected Credits
+          <input type="number" formControlName="expectedCredits" />
+        </label>
+        <button type="button" (click)="removeCoursePreference(i)">Remove</button>
+      </div>
+      <button type="button" (click)="addCoursePreference()">Add Course Row</button>
+    </fieldset>
+
+    <button type="submit" [disabled]="enrollmentForm.invalid || enrollmentForm.pending">Submit Enrollment</button>
+  </form>
+
+  <p class="success" *ngIf="submitMessage">{{ submitMessage }}</p>
+  <a routerLink="/courses">Back to Courses</a>
+</section>

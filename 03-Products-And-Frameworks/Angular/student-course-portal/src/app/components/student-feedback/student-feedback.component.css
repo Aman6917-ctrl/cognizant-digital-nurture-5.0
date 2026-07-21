@@ -1,0 +1,39 @@
+.feedback {
+  padding: 1.5rem;
+}
+
+.feedback form {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 520px;
+}
+
+.feedback label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+.feedback input,
+.feedback textarea {
+  padding: 0.45rem 0.6rem;
+  font: inherit;
+}
+
+.feedback .error {
+  margin: 0;
+  color: #b91c1c;
+  font-size: 0.85rem;
+}
+
+.feedback button {
+  width: fit-content;
+  padding: 0.45rem 0.9rem;
+}
+
+.feedback pre {
+  margin-top: 1rem;
+  background: #f8fafc;
+  padding: 0.75rem;
+  border-radius: 6px;
+}

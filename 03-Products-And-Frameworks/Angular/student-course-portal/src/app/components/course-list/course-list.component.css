@@ -1,0 +1,47 @@
+.course-list {
+  padding: 1.5rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.controls input[type='text'] {
+  min-width: 220px;
+  padding: 0.4rem 0.6rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.status {
+  font-weight: 500;
+  color: #1d4ed8;
+}
+
+.hint,
+.error {
+  margin: 0.25rem 0;
+}
+
+.error {
+  color: #b91c1c;
+}
+
+.empty {
+  color: #64748b;
+  font-style: italic;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}

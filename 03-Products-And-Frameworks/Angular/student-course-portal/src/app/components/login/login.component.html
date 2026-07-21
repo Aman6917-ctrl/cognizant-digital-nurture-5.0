@@ -1,0 +1,19 @@
+<section class="login">
+  <h2>Login</h2>
+  <p>Authenticate to access protected routes (Auth Guard).</p>
+
+  <form #loginForm="ngForm" (ngSubmit)="onLogin()">
+    <label>
+      Username
+      <input name="username" [(ngModel)]="username" required />
+    </label>
+    <label>
+      Password
+      <input name="password" type="password" [(ngModel)]="password" required minlength="4" />
+    </label>
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+  </form>
+
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+  <a routerLink="/home">Back to Home</a>
+</section>

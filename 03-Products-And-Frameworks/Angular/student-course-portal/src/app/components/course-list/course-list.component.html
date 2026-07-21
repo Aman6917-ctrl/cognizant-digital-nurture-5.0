@@ -1,0 +1,50 @@
+<section class="course-list">
+  <h2>Course List</h2>
+
+  <div class="controls">
+    <label for="search">Search courses (two-way binding):</label>
+    <input
+      id="search"
+      name="search"
+      type="text"
+      [ngModel]="searchTerm"
+      (ngModelChange)="searchTerm = $event; onSearchTermChange($event)"
+      placeholder="Type course name"
+    />
+
+    <label class="checkbox">
+      <input
+        type="checkbox"
+        [ngModel]="showInactiveCourses"
+        (ngModelChange)="showInactiveCourses = $event; onActiveFilterChange($event)"
+      />
+      Show inactive courses
+    </label>
+
+    <button type="button" (click)="clearSearch()">Clear Search (event binding)</button>
+  </div>
+
+  <p class="query-hint">Query params: search and activeOnly are synced to the URL.</p>
+  <p *ngIf="loading$ | async" class="hint">Loading courses from JSON Server…</p>
+  <p *ngIf="storeError$ | async as storeError" class="error">{{ storeError }}</p>
+
+  <p class="status" [title]="'Last action: ' + lastActionMessage">{{ lastActionMessage }}</p>
+
+  <p *ngIf="filteredCourses.length === 0" class="empty">No courses match your filters.</p>
+
+  <div class="cards" *ngIf="filteredCourses.length > 0">
+      <app-course-card
+        *ngFor="let course of filteredCourses; trackBy: trackByCourseId"
+        [course]="course"
+        [selected]="selectedCourseId === course.id"
+        (courseSelected)="onCourseSelected($event)"
+        (enrollClicked)="onEnroll($event)"
+      ></app-course-card>
+  </div>
+
+  <div [ngSwitch]="selectedCourseId === null ? 'none' : 'selected'" class="selection-switch">
+    <p *ngSwitchCase="'none'">No course selected yet.</p>
+    <p *ngSwitchCase="'selected'">A course is selected. Check the status message above.</p>
+    <p *ngSwitchDefault>Selection state unknown.</p>
+  </div>
+</section>

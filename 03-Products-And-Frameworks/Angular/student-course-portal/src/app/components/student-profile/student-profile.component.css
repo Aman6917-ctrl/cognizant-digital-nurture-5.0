@@ -1,0 +1,14 @@
+.profile {
+  padding: 1.5rem;
+}
+
+.profile dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem 1.5rem;
+}
+
+.profile dt {
+  font-weight: 600;
+  color: #334155;
+}

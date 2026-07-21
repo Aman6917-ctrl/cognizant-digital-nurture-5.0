@@ -1,0 +1,12 @@
+.home {
+  padding: 1.5rem;
+}
+
+.home h2 {
+  margin-top: 0;
+  color: #1e3a5f;
+}
+
+.home ul {
+  line-height: 1.6;
+}

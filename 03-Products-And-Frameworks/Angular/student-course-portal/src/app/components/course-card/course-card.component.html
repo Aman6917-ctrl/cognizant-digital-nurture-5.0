@@ -1,0 +1,29 @@
+<article
+  class="course-card"
+  appHighlight
+  [ngClass]="{
+    'course-card--active': course.isActive,
+    'course-card--inactive': !course.isActive,
+    'course-card--selected': selected
+  }"
+  [ngStyle]="{ 'border-color': cardBorderColor, 'box-shadow': selected ? '0 4px 12px rgba(37,99,235,0.25)' : 'none' }"
+  (click)="onSelectCourse()"
+  role="button"
+  tabindex="0"
+>
+  <h3>{{ course.title }}</h3>
+  <p>Credits: {{ course.credits | creditLabel }}</p>
+
+  <div [ngSwitch]="course.level">
+    <span *ngSwitchCase="'Beginner'" class="level level-beginner">Beginner Track</span>
+    <span *ngSwitchCase="'Intermediate'" class="level level-intermediate">Intermediate Track</span>
+    <span *ngSwitchCase="'Advanced'" class="level level-advanced">Advanced Track</span>
+    <span *ngSwitchDefault class="level">General Track</span>
+  </div>
+
+  <p *ngIf="!course.isActive" class="inactive-note">This course is currently inactive.</p>
+
+  <button type="button" class="enroll-btn" [disabled]="!course.isActive" (click)="onEnroll($event)">
+    Enroll
+  </button>
+</article>

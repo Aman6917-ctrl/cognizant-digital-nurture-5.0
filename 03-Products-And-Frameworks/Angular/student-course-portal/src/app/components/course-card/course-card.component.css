@@ -1,0 +1,66 @@
+.course-card {
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-2px);
+}
+
+.course-card--active {
+  background: #f8fafc;
+}
+
+.course-card--inactive {
+  opacity: 0.85;
+}
+
+.course-card--selected {
+  background: #eff6ff;
+}
+
+.level {
+  display: inline-block;
+  margin: 0.5rem 0;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.level-beginner {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.level-intermediate {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.level-advanced {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.inactive-note {
+  color: #b91c1c;
+  font-size: 0.9rem;
+}
+
+.enroll-btn {
+  margin-top: 0.75rem;
+  padding: 0.4rem 0.9rem;
+  border: none;
+  border-radius: 4px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+}
+
+.enroll-btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}

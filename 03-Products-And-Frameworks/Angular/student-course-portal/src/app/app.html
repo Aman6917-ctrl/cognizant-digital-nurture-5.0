@@ -1,0 +1,14 @@
+<div class="app-shell">
+  <app-header></app-header>
+
+  <div *ngIf="loadingService.isLoading()" class="global-loading">Loading…</div>
+  <div *ngIf="httpErrorService.errorMessage() as error" class="global-error">
+    <span>{{ error }}</span>
+    <button type="button" (click)="clearHttpError()">Dismiss</button>
+  </div>
+
+  <main class="app-content">
+    <router-outlet />
+  </main>
+  <footer class="app-footer">Angular 20 — Hands-On 1–9 — {{ appName }}</footer>
+</div>

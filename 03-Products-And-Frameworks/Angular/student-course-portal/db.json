@@ -1,0 +1,32 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Angular Fundamentals",
+      "credits": 3,
+      "level": "Beginner",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "title": "TypeScript Essentials",
+      "credits": 2,
+      "level": "Beginner",
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "title": "RxJS Workshop",
+      "credits": 4,
+      "level": "Advanced",
+      "isActive": true
+    },
+    {
+      "id": 4,
+      "title": "Legacy AngularJS Migration",
+      "credits": 3,
+      "level": "Intermediate",
+      "isActive": false
+    }
+  ]
+}

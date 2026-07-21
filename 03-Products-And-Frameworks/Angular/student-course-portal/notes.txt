@@ -1,0 +1,18 @@
+Hands-On 8:
+- CourseApiService with HttpClient CRUD against JSON Server (db.json)
+- RxJS: map, tap, catchError, retry, switchMap
+- Interceptors: authorization, loading, error
+
+Hands-On 9:
+- NgRx store slice: courses
+- Actions, reducer, effects, selectors
+- CourseAdminComponent dispatches CRUD actions
+- Redux DevTools via provideStoreDevtools
+- Course catalog loads courses through loadCourses action/effect
+
+Run JSON Server: npm run api
+
+Hands-On 10:
+- Jasmine + Karma unit tests (TestBed, MockStore, HttpTestingController)
+- npm run test:ci (headless + code coverage)
+- coverage/student-course-portal/index.html
