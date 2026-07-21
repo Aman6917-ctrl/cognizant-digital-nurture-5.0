@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS country (
+    country_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    country_code VARCHAR(3) NOT NULL UNIQUE,
+    country_name VARCHAR(100) NOT NULL
+);
