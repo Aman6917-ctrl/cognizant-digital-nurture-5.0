@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Departments -->
+    <bean id="deptEngineering" class="com.cognizant.springlearn.model.Department">
+        <property name="id" value="1"/>
+        <property name="name" value="Engineering"/>
+    </bean>
+    <bean id="deptHumanResources" class="com.cognizant.springlearn.model.Department">
+        <property name="id" value="2"/>
+        <property name="name" value="Human Resources"/>
+    </bean>
+    <bean id="deptOperations" class="com.cognizant.springlearn.model.Department">
+        <property name="id" value="3"/>
+        <property name="name" value="Operations"/>
+    </bean>
+
+    <!-- Skills -->
+    <bean id="skillJava" class="com.cognizant.springlearn.model.Skill">
+        <property name="id" value="1"/>
+        <property name="name" value="Java"/>
+    </bean>
+    <bean id="skillSpring" class="com.cognizant.springlearn.model.Skill">
+        <property name="id" value="2"/>
+        <property name="name" value="Spring"/>
+    </bean>
+    <bean id="skillSql" class="com.cognizant.springlearn.model.Skill">
+        <property name="id" value="3"/>
+        <property name="name" value="SQL"/>
+    </bean>
+    <bean id="skillLeadership" class="com.cognizant.springlearn.model.Skill">
+        <property name="id" value="4"/>
+        <property name="name" value="Leadership"/>
+    </bean>
+    <bean id="skillAngular" class="com.cognizant.springlearn.model.Skill">
+        <property name="id" value="5"/>
+        <property name="name" value="Angular"/>
+    </bean>
+
+    <!-- Employees -->
+    <bean id="employee1" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="101"/>
+        <property name="name" value="Aisha Khan"/>
+        <property name="email" value="aisha.khan@example.com"/>
+        <property name="department" ref="deptEngineering"/>
+        <property name="skills">
+            <list>
+                <ref bean="skillJava"/>
+                <ref bean="skillSpring"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="employee2" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="102"/>
+        <property name="name" value="Ben Carter"/>
+        <property name="email" value="ben.carter@example.com"/>
+        <property name="department" ref="deptEngineering"/>
+        <property name="skills">
+            <list>
+                <ref bean="skillJava"/>
+                <ref bean="skillSql"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="employee3" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="103"/>
+        <property name="name" value="Chloe Nguyen"/>
+        <property name="email" value="chloe.nguyen@example.com"/>
+        <property name="department" ref="deptHumanResources"/>
+        <property name="skills">
+            <list>
+                <ref bean="skillLeadership"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="employee4" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="104"/>
+        <property name="name" value="David Patel"/>
+        <property name="email" value="david.patel@example.com"/>
+        <property name="department" ref="deptOperations"/>
+        <property name="skills">
+            <list>
+                <ref bean="skillSql"/>
+                <ref bean="skillLeadership"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="employee5" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="105"/>
+        <property name="name" value="Elena Rossi"/>
+        <property name="email" value="elena.rossi@example.com"/>
+        <property name="department" ref="deptEngineering"/>
+        <property name="skills">
+            <list>
+                <ref bean="skillSpring"/>
+                <ref bean="skillAngular"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="employeeList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="employee1"/>
+                <ref bean="employee2"/>
+                <ref bean="employee3"/>
+                <ref bean="employee4"/>
+                <ref bean="employee5"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="departmentList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="deptEngineering"/>
+                <ref bean="deptHumanResources"/>
+                <ref bean="deptOperations"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>

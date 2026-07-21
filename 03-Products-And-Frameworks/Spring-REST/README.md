@@ -1,6 +1,6 @@
 # Spring REST & Spring Core (XML)
 
-Hands-on exercises **1–13** for Spring Boot **3.3.x**, Spring Web, Spring Core XML, REST, and SLF4J (Java **21**).
+Hands-on exercises **1–15** for Spring Boot **3.3.x**, Spring Web, Spring Core XML, REST, Employee/Department services, and SLF4J (Java **21**).
 
 | Hands-On | Folder | Focus |
 |----------|--------|--------|
@@ -17,6 +17,8 @@ Hands-on exercises **1–13** for Spring Boot **3.3.x**, Spring Web, Spring Core
 | 11 | [Hands-On-11-Country-Exception](Hands-On-11-Country-Exception/) | `CountryNotFoundException` + `@ResponseStatus` |
 | 12 | [Hands-On-12-MockMvc-Success-Test](Hands-On-12-MockMvc-Success-Test/) | MockMvc happy-path JSON tests |
 | 13 | [Hands-On-13-MockMvc-Exception-Test](Hands-On-13-MockMvc-Exception-Test/) | MockMvc 404 / error message tests |
+| 14 | [Hands-On-14-Employee-REST-Service](Hands-On-14-Employee-REST-Service/) | XML `employee.xml`, `GET /employees`, DAO/Service/Controller |
+| 15 | [Hands-On-15-Department-REST-Service](Hands-On-15-Department-REST-Service/) | `GET /departments`, shared XML catalog |
 
 Package base: `com.cognizant.springlearn`
 
