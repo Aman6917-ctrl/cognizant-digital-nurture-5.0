@@ -1,6 +1,6 @@
 # Spring REST & Spring Core (XML)
 
-Hands-on exercises **1–20** for Spring Boot **3.3.x**, Spring Web, Spring Core XML, REST, validation, exception handling, Employee/Department services, and SLF4J (Java **21**).
+Hands-on exercises **1–24** for Spring Boot **3.3.x**, Spring Web, Spring Core XML, REST, validation, exception handling, security, JWT, and SLF4J (Java **21**).
 
 | Hands-On | Folder | Focus |
 |----------|--------|--------|
@@ -24,6 +24,10 @@ Hands-on exercises **1–20** for Spring Boot **3.3.x**, Spring Web, Spring Core
 | 18 | [Hands-On-18-Global-Exception-Handler](Hands-On-18-Global-Exception-Handler/) | `@ControllerAdvice`, structured error JSON |
 | 19 | [Hands-On-19-Employee-PUT-Service](Hands-On-19-Employee-PUT-Service/) | `PUT /employees`, nested validation, `@JsonFormat` |
 | 20 | [Hands-On-20-Employee-DELETE-Service](Hands-On-20-Employee-DELETE-Service/) | `DELETE /employees/{id}`, 404 when missing |
+| 21 | [Hands-On-21-Spring-Security-Basic](Hands-On-21-Spring-Security-Basic/) | `SecurityFilterChain`, HTTP Basic, 401 |
+| 22 | [Hands-On-22-Users-and-Roles](Hands-On-22-Users-and-Roles/) | BCrypt users, `/countries` → USER role |
+| 23 | [Hands-On-23-JWT-Authentication](Hands-On-23-JWT-Authentication/) | `GET /authenticate`, HS256 JWT (jjwt) |
+| 24 | [Hands-On-24-JWT-Authorization-Filter](Hands-On-24-JWT-Authorization-Filter/) | `JwtAuthorizationFilter`, Bearer protection |
 
 Package base: `com.cognizant.springlearn`
 
